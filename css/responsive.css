@@ -1,9 +1,411 @@
-@media(max-width:768px){
+/* =========================================================
+   RESPONSIVE.CSS
+   Mobile-first refinements for phones, tablets and laptops.
+   Loaded last, so rules here take priority and patch any
+   gaps left by style.css.
+========================================================= */
 
-section{
-
-padding:70px 0;
-
+/* ---------- Prevent any horizontal scroll on small screens ---------- */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* =========================================================
+   LARGE TABLETS / SMALL LAPTOPS (992px - 1199px)
+========================================================= */
+@media (max-width: 1199px) {
+
+    .hero-section h1 {
+        font-size: clamp(2.4rem, 5vw, 3.4rem);
+    }
+
+    .section-title {
+        font-size: clamp(1.8rem, 4vw, 2.4rem);
+    }
+}
+
+/* =========================================================
+   TABLETS (768px - 991px)
+========================================================= */
+@media (max-width: 991px) {
+
+    section {
+        padding: 70px 0;
+    }
+
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* Hero */
+    .hero-section {
+        text-align: center;
+        padding-top: 110px;
+    }
+
+    .hero-section .row {
+        flex-direction: column-reverse;
+    }
+
+    .hero-section p,
+    .hero-section .hero-subtitle {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-image-box {
+        max-width: 260px;
+        margin: 0 auto 30px;
+    }
+
+    .social-icons {
+        justify-content: center;
+        display: flex;
+    }
+
+    .hero-cta-group {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* About */
+    .about-image {
+        width: 260px;
+        height: 260px;
+    }
+
+    .about-text {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    /* Tech stack / services / project cards get breathing room */
+    .service-card,
+    .tech-card,
+    .project-card {
+        margin-bottom: 10px;
+    }
+
+    /* Skills boxes stack with spacing */
+    .skill-box {
+        margin-bottom: 25px;
+    }
+
+    /* Timeline keeps its rail but tightens the offset */
+    .timeline {
+        padding-left: 32px;
+    }
+
+    .timeline-icon {
+        left: -50px;
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    /* Contact */
+    .contact-info-card {
+        margin-bottom: 25px;
+    }
+
+    /* Footer centers nicely on tablets */
+    .footer .row > div {
+        text-align: center;
+    }
+
+    .footer-social,
+    .social-contact {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* =========================================================
+   MOBILE / PHONES (≤ 767px)
+========================================================= */
+@media (max-width: 767px) {
+
+    body {
+        padding-top: 75px;
+    }
+
+    section {
+        padding: 60px 0;
+        scroll-margin-top: 70px;
+    }
+
+    .container {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    /* ---------- Navbar ---------- */
+    .navbar-brand {
+        font-size: 22px;
+    }
+
+    .navbar-collapse {
+        max-height: 75vh;
+        overflow-y: auto;
+    }
+
+    .navbar .d-flex {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .navbar .btn-warning {
+        width: 100%;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero-tag {
+        font-size: 13px;
+        padding: 8px 16px;
+        display: inline-block;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+        line-height: 1.25;
+    }
+
+    .hero-subtitle {
+        font-size: 17px;
+    }
+
+    .hero-section .lead {
+        font-size: 15px;
+    }
+
+    .hero-image-box {
+        max-width: 190px;
+        margin: 10px auto 25px;
+    }
+
+    .badge.bg-light {
+        font-size: 12px;
+        margin-bottom: 6px;
+        display: inline-block;
+    }
+
+    /* Stat counters wrap cleanly on very small phones */
+    .hero-section .row.mt-5 .col-3,
+    .about-section .row.mt-4.text-center .col-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+        margin-bottom: 18px;
+    }
+
+    .hero-section .row.mt-5 h2 {
+        font-size: 1.5rem;
+    }
+
+    /* ---------- About ---------- */
+    .about-image {
+        width: 220px;
+        height: 220px;
+    }
+
+    .info-card {
+        padding: 12px;
+    }
+
+    .info-card i {
+        font-size: 22px;
+        margin-right: 12px;
+    }
+
+    /* ---------- Services / Tech / Projects ---------- */
+    .service-card,
+    .tech-card,
+    .certificate-card {
+        padding: 25px 18px;
+    }
+
+    .service-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 30px;
+    }
+
+    .tech-card img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .project-img {
+        height: 190px;
+    }
+
+    .filter-btn {
+        margin: 4px;
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    /* ---------- Skills ---------- */
+    .skill-box {
+        padding: 22px;
+    }
+
+    /* ---------- Education / Timeline ---------- */
+    .timeline {
+        padding-left: 28px;
+        border-left-width: 3px;
+    }
+
+    .timeline-item {
+        margin-bottom: 30px;
+    }
+
+    .timeline-icon {
+        left: -46px;
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
+    }
+
+    .timeline-content {
+        padding: 18px;
+    }
+
+    /* ---------- Contact ---------- */
+    .contact-info-card,
+    .contact-form-card {
+        padding: 22px;
+    }
+
+    .contact-item i {
+        width: 48px;
+        height: 48px;
+        font-size: 18px;
+        margin-right: 14px;
+    }
+
+    .social-contact a {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+    }
+
+    .form-control {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    /* ---------- Footer ---------- */
+    .footer {
+        padding: 50px 0 15px;
+        text-align: center;
+    }
+
+    .footer .row > div {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .footer-social,
+    .social-contact {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* ---------- Back to top button ---------- */
+    #topBtn {
+        width: 46px;
+        height: 46px;
+        right: 18px;
+        bottom: 18px;
+        font-size: 18px;
+    }
+}
+
+/* =========================================================
+   SMALL PHONES (≤ 400px)
+========================================================= */
+@media (max-width: 400px) {
+
+    .hero-section h1 {
+        font-size: 1.65rem;
+    }
+
+    .typing-text {
+        font-size: 1.05rem;
+        height: 30px;
+    }
+
+    .hero-image-box {
+        max-width: 160px;
+    }
+
+    .about-image {
+        width: 180px;
+        height: 180px;
+    }
+
+    .hero-cta-group .btn,
+    .navbar .btn-warning {
+        width: 100%;
+        max-width: 230px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-section .row.mt-5 .col-3,
+    .about-section .row.mt-4.text-center .col-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/* =========================================================
+   LANDSCAPE PHONES (short height, wide width)
+========================================================= */
+@media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+
+    .hero-section {
+        padding-top: 100px;
+        min-height: auto;
+    }
+
+    .hero-section .row.min-vh-100 {
+        min-height: auto;
+    }
+
+    .hero-image-box {
+        max-width: 150px;
+    }
+}
+
+/* =========================================================
+   TOUCH DEVICES: disable hover-lift translate so taps
+   don't feel "stuck" mid-animation
+========================================================= */
+@media (hover: none) {
+
+    .service-card:hover,
+    .tech-card:hover,
+    .project-card:hover,
+    .certificate-card:hover,
+    .timeline-content:hover,
+    .info-card:hover,
+    .counter-box:hover {
+        transform: none;
+    }
 }

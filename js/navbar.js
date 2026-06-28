@@ -30,6 +30,28 @@ window.addEventListener("scroll", () => {
 
 });
 
+// Auto-close mobile menu after tapping a link
+const navbarCollapseEl = document.getElementById("navbar");
+
+if (navbarCollapseEl) {
+
+    navLinks.forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            if (navbarCollapseEl.classList.contains("show")) {
+
+                const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapseEl);
+                bsCollapse.hide();
+
+            }
+
+        });
+
+    });
+
+}
+
 const navbar = document.querySelector(".custom-navbar");
 
 window.addEventListener("scroll", () => {

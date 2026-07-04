@@ -6,7 +6,8 @@
 ========================================================= */
 
 /* ---------- Prevent any horizontal scroll on small screens ---------- */
-html, body {
+html,
+body {
     max-width: 100%;
     overflow-x: hidden;
 }
@@ -117,7 +118,7 @@ img {
     }
 
     /* Footer centers nicely on tablets */
-    .footer .row > div {
+    .footer .row>div {
         text-align: center;
     }
 
@@ -242,9 +243,26 @@ img {
         font-size: 30px;
     }
 
+    .tech-card {
+
+        height: 150px;
+
+        padding: 20px 10px;
+
+    }
+
     .tech-card img {
-        width: 55px;
-        height: 55px;
+
+        width: 45px;
+
+        height: 45px;
+
+    }
+
+    .tech-card h5 {
+
+        font-size: 18px;
+
     }
 
     .project-img {
@@ -313,7 +331,7 @@ img {
         text-align: center;
     }
 
-    .footer .row > div {
+    .footer .row>div {
         text-align: center;
         margin-bottom: 10px;
     }

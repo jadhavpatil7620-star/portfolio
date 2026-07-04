@@ -704,53 +704,115 @@ TECH STACK
 
 .tech-card {
 
+    min-width: 180px;
+
+    height: 150px;
+
     background: #fff;
 
-    border-radius: 20px;
+    border-radius: 18px;
 
-    padding: 30px;
+    display: flex;
 
-    text-align: center;
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
 
     box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
 
-    transition: .4s;
-
-    height: 100%;
+    transition: .3s;
 
 }
 
 .tech-card:hover {
 
-    transform: translateY(-10px);
-
-    box-shadow: 0 15px 35px rgba(0, 0, 0, .15);
+    transform: translateY(-8px);
 
 }
 
 .tech-card img {
 
-    width: 70px;
+    width: 55px;
 
-    height: 70px;
+    height: 55px;
 
-    margin-bottom: 20px;
-
-    transition: .4s;
-
-}
-
-.tech-card:hover img {
-
-    transform: scale(1.15) rotate(5deg);
+    margin-bottom: 15px;
 
 }
 
 .tech-card h5 {
 
-    font-weight: 700;
-
     margin: 0;
+
+    font-size: 18px;
+
+}
+
+.tech-slider {
+
+    overflow: hidden;
+
+    width: 100%;
+
+    position: relative;
+
+}
+
+.tech-track {
+
+    display: flex;
+
+    gap: 25px;
+
+    width: max-content;
+
+    animation: scrollLeft 20s linear infinite;
+
+}
+
+.tech-slider.reverse .tech-track {
+
+    animation: scrollRight 20s linear infinite;
+
+}
+
+.tech-slider:hover .tech-track {
+
+    animation-play-state: paused;
+
+}
+
+@keyframes scrollLeft {
+
+    0% {
+
+        transform: translateX(0);
+
+    }
+
+    100% {
+
+        transform: translateX(-50%);
+
+    }
+
+}
+
+@keyframes scrollRight {
+
+    0% {
+
+        transform: translateX(-50%);
+
+    }
+
+    100% {
+
+        transform: translateX(0);
+
+    }
 
 }
 
@@ -855,6 +917,48 @@ SKILLS SECTION
     transition: .4s;
 
     box-shadow: 0 15px 35px rgba(0, 0, 0, .15);
+
+}
+
+.tech-slider {
+
+    overflow: hidden;
+
+    position: relative;
+
+}
+
+.tech-track {
+
+    display: flex;
+
+    gap: 25px;
+
+    width: max-content;
+
+    animation: scrollTech 25s linear infinite;
+
+}
+
+.tech-slider:hover .tech-track {
+
+    animation-play-state: paused;
+
+}
+
+@keyframes scrollTech {
+
+    0% {
+
+        transform: translateX(0);
+
+    }
+
+    100% {
+
+        transform: translateX(-50%);
+
+    }
 
 }
 
